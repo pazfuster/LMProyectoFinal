@@ -1,5 +1,5 @@
 .contact-section {
-  padding-top: 60px; /* Separación para que el navbar no tape el título */
+  padding-top: 150px !important; /* Más espacio para evitar el solapamiento con el navbar */
 }
 
 .tracking-tighter {

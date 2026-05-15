@@ -1,19 +1,29 @@
 .navbar {
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-  background-color: rgba(0, 0, 0, 0.9) !important;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(20px);
+  background-color: rgba(0, 0, 0, 0.7) !important;
+  box-shadow: none !important;
+  border: none !important;
 }
 
 .navbar-brand {
   letter-spacing: -1px;
 }
 
+.custom-nav-gap {
+  gap: 5rem !important;
+}
+
 .nav-link {
-  font-size: 0.9rem;
-  letter-spacing: 1px;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
   position: relative;
-  opacity: 0.7;
-  transition: opacity 0.3s ease;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
 }
 
 .nav-link:hover, .nav-link.active {

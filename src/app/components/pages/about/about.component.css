@@ -1,5 +1,5 @@
 .about-section {
-  padding-top: 100px; /* Margen superior para el navbar fijo */
+  padding-top: 150px !important; /* Margen superior para el navbar fijo */
 }
 
 .tracking-tighter {

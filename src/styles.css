@@ -13,11 +13,11 @@
 
 body {
   font-family: var(--bs-font-sans-serif);
-  background-color: #ffffff;
-  color: #000000;
+  background-color: #000000; /* Fondo negro para evitar destellos blancos */
+  color: #ffffff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding-top: 90px;
+  padding-top: 0; /* Eliminamos el padding para que el hero empiece arriba */
 }
 
 @media (max-width: 991px) {
