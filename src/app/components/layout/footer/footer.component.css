@@ -1,0 +1,16 @@
+footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tracking-widest {
+  letter-spacing: 2px;
+}
+
+i {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+i:hover {
+  color: var(--bs-primary);
+}

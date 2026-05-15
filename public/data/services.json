@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "name": "Neon Genesis Party",
+    "description": "Experiencia inmersiva con luces de neón y DJ set vanguardista.",
+    "longDescription": "Sumérgete en una noche de pura energía visual. Nuestro paquete Neon Genesis incluye iluminación arquitectónica, barras LED interactivas y un lineup de DJs especializados en ritmos sintéticos.",
+    "price": 1200,
+    "imageUrl": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=1000",
+    "category": "Premium",
+    "duration": "6 Horas",
+    "includes": ["DJ Set", "Luces Neón", "Barra Libre Premium"]
+  },
+  {
+    "id": 2,
+    "name": "Minimalist Rooftop",
+    "description": "Elegancia pura en las alturas con vistas panorámicas.",
+    "longDescription": "Ideal para lanzamientos de marca o celebraciones exclusivas. Mobiliario de diseño minimalista, coctelería de autor y ambiente chill-out de alta gama.",
+    "price": 2500,
+    "imageUrl": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&q=80&w=1000",
+    "category": "Corporate",
+    "duration": "4 Horas",
+    "includes": ["Catering Gourmet", "Música Ambiental", "Servicio VIP"]
+  },
+  {
+    "id": 3,
+    "name": "Underground Warehouse",
+    "description": "Estética brutalista para eventos que rompen lo convencional.",
+    "longDescription": "Ubicado en naves industriales reconvertidas. Espacios crudos, sonido de alta fidelidad y una atmósfera que recuerda a los clubes de Berlín de los 90.",
+    "price": 1800,
+    "imageUrl": "https://images.unsplash.com/photo-1514525253361-bee8718a300c?auto=format&fit=crop&q=80&w=1000",
+    "category": "Alternative",
+    "duration": "8 Horas",
+    "includes": ["Sonido Funktion-One", "Seguridad Privada", "Visuales 3D"]
+  },
+  {
+    "id": 4,
+    "name": "Garden Symphony",
+    "description": "Naturaleza y sofisticación en un entorno botánico único.",
+    "longDescription": "Perfecto para bodas o eventos diurnos. Carpas transparentes, arreglos florales orgánicos y música clásica contemporánea en vivo.",
+    "price": 3200,
+    "imageUrl": "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80&w=1000",
+    "category": "Classic",
+    "duration": "10 Horas",
+    "includes": ["Orquesta", "Decoración Floral", "Coctelería Botánica"]
+  }
+]
