@@ -1,0 +1,76 @@
+<section class="create-section py-5 bg-black text-white min-vh-100 d-flex align-items-center">
+  <div class="container px-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="mb-5 d-flex justify-content-between align-items-end">
+          <h1 class="display-3 fw-bold tracking-tighter m-0">NUEVO<br>EVENTO.</h1>
+          <a routerLink="/servicios" class="text-white text-decoration-none small fw-bold tracking-widest border-bottom border-primary pb-1">VOLVER AL CATÁLOGO</a>
+        </div>
+
+        <div class="bg-white p-5 text-black">
+          <form (ngSubmit)="onSubmit()" #eventForm="ngForm">
+            <div class="row g-4">
+              <div class="col-12">
+                <label class="small fw-bold text-uppercase mb-2">Nombre del Evento</label>
+                <input type="text" name="name" [(ngModel)]="newEvent.name" class="form-control form-control-lg rounded-0 border-dark" placeholder="Ej: Velvet Underground Night" required>
+              </div>
+
+              <div class="col-md-8">
+                <label class="small fw-bold text-uppercase mb-2">Precio</label>
+                <input type="number" name="price" [(ngModel)]="newEvent.price" class="form-control form-control-lg rounded-0 border-dark" placeholder="0" required>
+              </div>
+              <div class="col-md-4">
+                <label class="small fw-bold text-uppercase mb-2">Divisa</label>
+                <select name="currency" [(ngModel)]="newEvent.currency" class="form-select form-select-lg rounded-0 border-dark">
+                  <option value="€">Euro (€)</option>
+                  <option value="$">Dólar ($)</option>
+                  <option value="£">Libra (£)</option>
+                  <option value="¥">Yen (¥)</option>
+                </select>
+              </div>
+              
+              <div class="col-md-6">
+                <label class="small fw-bold text-uppercase mb-2">Categoría</label>
+                <select name="category" [(ngModel)]="newEvent.category" class="form-select form-select-lg rounded-0 border-dark">
+                  <option value="Premium">Premium</option>
+                  <option value="Corporativo">Corporativo</option>
+                  <option value="Alternativo">Alternativo</option>
+                  <option value="Creativo">Creativo</option>
+                  <option value="Lujo">Lujo</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="small fw-bold text-uppercase mb-2">Duración estimada</label>
+                <input type="text" name="duration" [(ngModel)]="newEvent.duration" class="form-control form-control-lg rounded-0 border-dark" placeholder="Ej: 6 Horas">
+              </div>
+
+              <div class="col-12">
+                <label class="small fw-bold text-uppercase mb-2">Descripción Corta</label>
+                <input type="text" name="description" [(ngModel)]="newEvent.description" class="form-control form-control-lg rounded-0 border-dark" placeholder="Una frase impactante" required>
+              </div>
+
+              <div class="col-12">
+                <label class="small fw-bold text-uppercase mb-2">Descripción Detallada</label>
+                <textarea name="longDescription" [(ngModel)]="newEvent.longDescription" class="form-control form-control-lg rounded-0 border-dark" rows="4" placeholder="Explica la experiencia completa..."></textarea>
+              </div>
+
+              <div class="col-12">
+                <label class="small fw-bold text-uppercase mb-2">Incluye (separado por comas)</label>
+                <input type="text" name="includes" [(ngModel)]="includesText" class="form-control form-control-lg rounded-0 border-dark" placeholder="Ej: DJ, Barra Libre, Catering">
+              </div>
+
+              <div class="col-12">
+                <label class="small fw-bold text-uppercase mb-2">URL de la Imagen</label>
+                <input type="text" name="imageUrl" [(ngModel)]="newEvent.imageUrl" class="form-control form-control-lg rounded-0 border-dark" placeholder="https://...">
+              </div>
+
+              <div class="col-12 mt-5">
+                <button type="submit" [disabled]="!eventForm.form.valid" class="btn btn-black btn-lg w-100 py-3 fw-bold tracking-widest rounded-0">CREAR EVENTO Y PUBLICAR</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,5 +1,9 @@
+.sticky-lg-top {
+  top: 90px !important;
+}
+
 .vh-lg-100 {
-  height: 100vh;
+  height: calc(100vh - 90px);
 }
 
 .p-lg-12 {

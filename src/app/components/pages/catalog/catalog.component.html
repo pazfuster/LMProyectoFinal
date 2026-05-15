@@ -1,15 +1,20 @@
 <section class="catalog-header py-5 bg-black text-white">
   <div class="container px-5 pt-5">
-    <h1 class="display-3 fw-bold tracking-tight">NUESTROS<br>SERVICIOS</h1>
-    <p class="text-secondary lead col-lg-6">Explora nuestra selección curada de experiencias para eventos.</p>
+    <div class="d-flex justify-content-between align-items-end">
+      <div>
+        <h1 class="display-3 fw-bold tracking-tight">NUESTROS<br>SERVICIOS</h1>
+        <p class="text-secondary lead col-lg-8">Explora nuestra selección curada de experiencias para eventos.</p>
+      </div>
+      <a routerLink="/servicios/nuevo" class="btn btn-outline-primary btn-lg rounded-0 px-4 py-3 mb-3 fw-bold tracking-widest">CREAR NUEVO EVENTO</a>
+    </div>
   </div>
 </section>
 
 <section class="py-5 bg-white">
   <div class="container px-5">
     <div class="row g-4">
-      @for (service of services; track service.id) {
-        <div class="col-md-6 col-lg-4">
+      @for (service of services; track service.id; let i = $index) {
+        <div class="col-md-6 col-lg-4 stagger-item" [class]="'stagger-' + (i % 6 + 1)">
           <div class="service-card" [routerLink]="['/servicios', service.id]">
             <div class="card-img-wrapper mb-3 overflow-hidden">
               <img [src]="service.imageUrl" [alt]="service.name" class="img-fluid service-img">
@@ -19,7 +24,9 @@
                 <span class="text-primary small fw-bold text-uppercase tracking-widest">{{ service.category }}</span>
                 <h4 class="fw-bold mt-1">{{ service.name }}</h4>
               </div>
-              <span class="fw-bold fs-5">${{ service.price }}</span>
+              <span class="fw-bold fs-5">
+                {{ service.price === 0 ? 'Gratis' : service.price + service.currency }}
+              </span>
             </div>
             <p class="text-secondary small mt-2">{{ service.description }}</p>
             <hr class="my-4">

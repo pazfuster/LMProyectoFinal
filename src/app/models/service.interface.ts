@@ -8,6 +8,7 @@ export interface Service {
   description: string;
   longDescription?: string;
   price: number;
+  currency: string;
   imageUrl: string;
   category: string;
   duration?: string;
