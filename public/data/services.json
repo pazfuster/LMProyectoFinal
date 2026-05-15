@@ -3,44 +3,66 @@
     "id": 1,
     "name": "Neon Genesis Party",
     "description": "Experiencia inmersiva con luces de neón y DJ set vanguardista.",
-    "longDescription": "Sumérgete en una noche de pura energía visual. Nuestro paquete Neon Genesis incluye iluminación arquitectónica, barras LED interactivas y un lineup de DJs especializados en ritmos sintéticos.",
+    "longDescription": "Sumérgete en una noche de pura energía visual. Nuestro paquete Neon Genesis incluye iluminación arquitectónica, barras LED interactivas y un lineup de DJs especializados en ritmos sintéticos. Perfecto para quienes buscan una estética futurista y vibrante.",
     "price": 1200,
     "imageUrl": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=1000",
     "category": "Premium",
     "duration": "6 Horas",
-    "includes": ["DJ Set", "Luces Neón", "Barra Libre Premium"]
+    "includes": ["DJ Set Internacional", "Iluminación Neón 360°", "Barra Libre Premium", "Visuales en tiempo real"]
   },
   {
     "id": 2,
-    "name": "Minimalist Rooftop",
-    "description": "Elegancia pura en las alturas con vistas panorámicas.",
-    "longDescription": "Ideal para lanzamientos de marca o celebraciones exclusivas. Mobiliario de diseño minimalista, coctelería de autor y ambiente chill-out de alta gama.",
+    "name": "Terraza Minimalista",
+    "description": "Elegancia pura en las alturas con vistas panorámicas de la ciudad.",
+    "longDescription": "Ideal para lanzamientos de marca o celebraciones exclusivas. Mobiliario de diseño minimalista, coctelería de autor y ambiente chill-out de alta gama bajo las estrellas. La sofisticación se une con la mejor vista urbana.",
     "price": 2500,
     "imageUrl": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&q=80&w=1000",
-    "category": "Corporate",
+    "category": "Corporativo",
     "duration": "4 Horas",
-    "includes": ["Catering Gourmet", "Música Ambiental", "Servicio VIP"]
+    "includes": ["Catering Gourmet", "Música Ambient en vivo", "Servicio de Aparcacoches", "Seguridad Privada"]
   },
   {
     "id": 3,
     "name": "Underground Warehouse",
     "description": "Estética brutalista para eventos que rompen lo convencional.",
-    "longDescription": "Ubicado en naves industriales reconvertidas. Espacios crudos, sonido de alta fidelidad y una atmósfera que recuerda a los clubes de Berlín de los 90.",
+    "longDescription": "Ubicado en naves industriales reconvertidas. Espacios crudos, sonido de alta fidelidad y una atmósfera que recuerda a los clubes de Berlín de los 90. Diseñado para marcas que quieren proyectar una imagen alternativa y potente.",
     "price": 1800,
     "imageUrl": "https://images.unsplash.com/photo-1514525253361-bee8718a300c?auto=format&fit=crop&q=80&w=1000",
-    "category": "Alternative",
+    "category": "Alternativo",
     "duration": "8 Horas",
-    "includes": ["Sonido Funktion-One", "Seguridad Privada", "Visuales 3D"]
+    "includes": ["Sonido Funktion-One", "Iluminación Industrial", "Barra de Coctelería", "Zona de Lounge Industrial"]
   },
   {
     "id": 4,
-    "name": "Garden Symphony",
+    "name": "Sinfonía Botánica",
     "description": "Naturaleza y sofisticación en un entorno botánico único.",
-    "longDescription": "Perfecto para bodas o eventos diurnos. Carpas transparentes, arreglos florales orgánicos y música clásica contemporánea en vivo.",
+    "longDescription": "Perfecto para bodas o eventos diurnos. Carpas transparentes, arreglos florales orgánicos y música clásica contemporánea en vivo. Una experiencia sensorial rodeada de vegetación exuberante y diseño floral de vanguardia.",
     "price": 3200,
     "imageUrl": "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80&w=1000",
-    "category": "Classic",
+    "category": "Clásico",
     "duration": "10 Horas",
-    "includes": ["Orquesta", "Decoración Floral", "Coctelería Botánica"]
+    "includes": ["Orquesta de Cámara", "Decoración Floral Exclusiva", "Banquete de 5 Tiempos", "Sommelier Privado"]
+  },
+  {
+    "id": 5,
+    "name": "After Dark Studio",
+    "description": "Sesión de fotografía y fiesta privada en un estudio de arte.",
+    "longDescription": "Una mezcla entre shooting de moda y fiesta privada. Iluminación de estudio, decorados temáticos y un ambiente creativo donde cada rincón es instagrameable. Ideal para influencers y creativos.",
+    "price": 1500,
+    "imageUrl": "https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&q=80&w=1000",
+    "category": "Creativo",
+    "duration": "5 Horas",
+    "includes": ["Fotógrafo Profesional", "Sets Temáticos", "DJ Tech-House", "Barra de Smoothies y Cócteles"]
+  },
+  {
+    "id": 6,
+    "name": "Gala de las Sombras",
+    "description": "Evento de etiqueta con temática gótica contemporánea.",
+    "longDescription": "Elegancia oscura para noches inolvidables. Velas negras, cubertería de plata y una atmósfera misteriosa pero extremadamente lujosa. Para quienes buscan celebrar lo extraordinario en la oscuridad.",
+    "price": 4000,
+    "imageUrl": "https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?auto=format&fit=crop&q=80&w=1000",
+    "category": "Lujo",
+    "duration": "7 Horas",
+    "includes": ["Cena de Gala", "Performance de Teatro", "Seguridad Élite", "Decoración Temática Inmersiva"]
   }
 ]

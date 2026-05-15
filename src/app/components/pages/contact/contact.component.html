@@ -1,0 +1,70 @@
+<section class="contact-section py-5 bg-black text-white min-vh-100 d-flex align-items-center">
+  <div class="container px-5">
+    <div class="row gx-5 align-items-start">
+      <!-- Información de contacto -->
+      <div class="col-lg-5 mb-5 mb-lg-0">
+        <h1 class="display-2 fw-bold tracking-tighter mb-5">HABLEMOS.</h1>
+        
+        <div class="mb-5">
+          <h6 class="text-uppercase small tracking-widest text-primary mb-3">Email</h6>
+          <a [href]="'mailto:' + contactInfo.email" class="fs-4 text-white text-decoration-none hover-primary">{{ contactInfo.email }}</a>
+        </div>
+        
+        <div class="mb-5">
+          <h6 class="text-uppercase small tracking-widest text-primary mb-3">Teléfono</h6>
+          <p class="fs-4">{{ contactInfo.phone }}</p>
+        </div>
+        
+        <div class="mb-5">
+          <h6 class="text-uppercase small tracking-widest text-primary mb-3">Ubicación</h6>
+          <p class="fs-5 text-secondary col-lg-8">{{ contactInfo.address }}</p>
+        </div>
+        
+        <div>
+          <h6 class="text-uppercase small tracking-widest text-primary mb-3">Síguenos</h6>
+          <div class="d-flex gap-4">
+            @for (item of contactInfo.social; track item.name) {
+              <a [href]="item.url" class="text-white text-decoration-none small fw-bold tracking-widest">{{ item.name | uppercase }}</a>
+            }
+          </div>
+        </div>
+      </div>
+      
+      <!-- Formulario de contacto -->
+      <div class="col-lg-7">
+        <div class="bg-white p-5 p-lg-10 text-black">
+          <h3 class="fw-bold mb-5">Cuéntanos sobre tu evento</h3>
+          <form (ngSubmit)="onSubmit()">
+            <div class="row g-4">
+              <div class="col-md-6">
+                <label class="small fw-bold text-uppercase mb-2">Nombre</label>
+                <input type="text" class="form-control form-control-lg rounded-0 border-dark" placeholder="Tu nombre" required>
+              </div>
+              <div class="col-md-6">
+                <label class="small fw-bold text-uppercase mb-2">Email</label>
+                <input type="email" class="form-control form-control-lg rounded-0 border-dark" placeholder="tu@email.com" required>
+              </div>
+              <div class="col-12">
+                <label class="small fw-bold text-uppercase mb-2">Tipo de Evento</label>
+                <select class="form-select form-select-lg rounded-0 border-dark">
+                  <option selected>Selecciona una opción</option>
+                  <option value="1">Corporativo</option>
+                  <option value="2">Fiesta Privada</option>
+                  <option value="3">Boda</option>
+                  <option value="4">Lanzamiento de Marca</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label class="small fw-bold text-uppercase mb-2">Mensaje</label>
+                <textarea class="form-control form-control-lg rounded-0 border-dark" rows="4" placeholder="¿En qué podemos ayudarte?"></textarea>
+              </div>
+              <div class="col-12 mt-5">
+                <button type="submit" class="btn btn-black btn-lg w-100 py-3 fw-bold tracking-widest rounded-0">ENVIAR SOLICITUD</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -9,19 +9,16 @@ import { Service } from '../models/service.interface';
 export class PartyService {
   /**
    * Inyección del HttpClient para realizar peticiones asíncronas.
-   * Se utiliza el patrón de inyección funcional de Angular 14+.
    */
-  private http = inject(HttpClient);
+  private http: HttpClient = inject(HttpClient);
   
   /**
-   * URL de la API de servicios. 
-   * En este caso, apunta a un archivo JSON local en la carpeta public.
+   * URL de la API de servicios (archivo local).
    */
-  private apiUrl = 'data/services.json';
+  private apiUrl: string = 'data/services.json';
 
   /**
    * Obtiene todos los servicios disponibles (CRUD: GetAll).
-   * @returns Observable con la lista de servicios.
    */
   getAll(): Observable<Service[]> {
     return this.http.get<Service[]>(this.apiUrl);
@@ -29,12 +26,10 @@ export class PartyService {
 
   /**
    * Obtiene un servicio específico por su ID (CRUD: GetOne).
-   * @param id Identificador único del servicio.
-   * @returns Observable con el servicio encontrado o undefined.
    */
   getOne(id: number): Observable<Service | undefined> {
     return this.getAll().pipe(
-      map(services => services.find(s => s.id === id))
+      map((services: Service[]) => services.find((s: Service) => s.id === id))
     );
   }
 }

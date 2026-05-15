@@ -6,7 +6,8 @@
 @import "bootstrap-icons/font/bootstrap-icons.css";
 
 :root {
-  --bs-primary: #ff3e00; /* Un naranja vibrante tipo editorial */
+  --bs-primary: #ff3e00;
+  /* Un naranja vibrante tipo editorial */
   --bs-font-sans-serif: 'Outfit', sans-serif;
 }
 
@@ -23,8 +24,13 @@ body {
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.tracking-tight { letter-spacing: -1.5px; }
-.tracking-tighter { letter-spacing: -3px; }
+.tracking-tight {
+  letter-spacing: -1.5px;
+}
+
+.tracking-tighter {
+  letter-spacing: -3px;
+}
 
 /* Scrollbar minimalista */
 ::-webkit-scrollbar {
@@ -49,6 +55,7 @@ body {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

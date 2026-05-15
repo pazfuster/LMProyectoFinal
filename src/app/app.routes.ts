@@ -3,6 +3,7 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { CatalogComponent } from './components/pages/catalog/catalog.component';
 import { DetailComponent } from './components/pages/detail/detail.component';
 import { AboutComponent } from './components/pages/about/about.component';
+import { ContactComponent } from './components/pages/contact/contact.component';
 import { NotFoundComponent } from './components/pages/not-found/not-found.component';
 
 /**
@@ -16,6 +17,7 @@ export const routes: Routes = [
   // Rutas para componentes genéricos
   { path: 'servicios', component: CatalogComponent },
   { path: 'nosotros', component: AboutComponent },
+  { path: 'contacto', component: ContactComponent },
   
   // Ruta con parámetros (ej. componentes/:parametro)
   { path: 'servicios/:id', component: DetailComponent },
