@@ -1,0 +1,59 @@
+@if (service) {
+  <section class="detail-page bg-white min-vh-100">
+    <div class="container-fluid p-0">
+      <div class="row g-0">
+        <!-- Imagen Hero del detalle -->
+        <div class="col-lg-6 sticky-lg-top vh-lg-100 overflow-hidden">
+          <img [src]="service.imageUrl" [alt]="service.name" class="img-fluid w-100 h-100 object-fit-cover">
+        </div>
+        
+        <!-- Información del detalle -->
+        <div class="col-lg-6 p-5 p-lg-12">
+          <nav aria-label="breadcrumb" class="mb-5">
+            <ol class="breadcrumb small">
+              <li class="breadcrumb-item"><a routerLink="/servicios" class="text-decoration-none text-secondary">SERVICIOS</a></li>
+              <li class="breadcrumb-item active text-primary" aria-current="page">{{ service.category | uppercase }}</li>
+            </ol>
+          </nav>
+
+          <h1 class="display-2 fw-bold tracking-tighter mb-4">{{ service.name | uppercase }}</h1>
+          
+          <div class="d-flex align-items-center gap-4 mb-5">
+            <span class="fs-3 fw-bold">${{ service.price }}</span>
+            <span class="badge bg-black rounded-0 px-3 py-2 text-uppercase tracking-widest">{{ service.duration }}</span>
+          </div>
+
+          <div class="description-section mb-5">
+            <p class="lead fw-normal text-dark">{{ service.description }}</p>
+            <p class="text-secondary mt-4">{{ service.longDescription }}</p>
+          </div>
+
+          @if (service.includes) {
+            <div class="includes-section mb-5">
+              <h5 class="fw-bold text-uppercase small tracking-widest mb-4">Lo que incluye:</h5>
+              <ul class="list-group list-group-flush">
+                @for (item of service.includes; track item) {
+                  <li class="list-group-item px-0 py-3 bg-transparent border-secondary opacity-75 d-flex align-items-center gap-3">
+                    <i class="bi bi-check2-circle text-primary fs-5"></i>
+                    {{ item }}
+                  </li>
+                }
+              </ul>
+            </div>
+          }
+
+          <div class="cta-section d-grid gap-3 mt-5">
+            <button class="btn btn-black btn-lg py-4 rounded-0 fw-bold tracking-widest">RESERVAR AHORA</button>
+            <button class="btn btn-outline-dark btn-lg py-4 rounded-0 fw-bold tracking-widest">DESCARGAR BROCHURE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+} @else {
+  <div class="container py-5 text-center">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Cargando...</span>
+    </div>
+  </div>
+}

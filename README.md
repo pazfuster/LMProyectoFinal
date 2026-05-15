@@ -1,59 +1,43 @@
-# Socialocal
+# SocialLocal - Agencia de Servicios para Eventos
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.11.
+SocialLocal es una aplicación web moderna desarrollada con **Angular 21**, diseñada para la gestión de servicios de fiestas y eventos. La estética del proyecto está inspirada en agencias creativas de alto nivel como Basic Agency y Chaptr Studio, utilizando un diseño minimalista, tipografía audaz y componentes interactivos.
 
-## Development server
+## Requisitos Previos
 
-To start a local development server, run:
+*   **Node.js**: Versión 18.x o superior.
+*   **Angular CLI**: Versión 19.x o superior.
 
+## Instalación
+
+1. Clona el repositorio (o descarga los archivos).
+2. Abre una terminal en la raíz del proyecto.
+3. Instala las dependencias:
+   ```bash
+   npm install
+   ```
+
+## Ejecución
+
+Para iniciar el servidor de desarrollo, ejecuta:
 ```bash
 ng serve
 ```
+La aplicación estará disponible en `http://localhost:4200/`.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Características Implementadas
 
-## Code scaffolding
+*   **Arquitectura Angular 19+**: Uso de componentes Standalone, inyección funcional e inputs de ruta.
+*   **Diseño Premium**: Integración de Bootstrap 5 con estilos personalizados, Google Fonts (Outfit) y micro-animaciones.
+*   **Enrutamiento Avanzado**: Rutas genéricas, parametrizadas, redirecciones y gestión de errores 404.
+*   **Servicio CRUD**: Implementación de `PartyService` con `HttpClient` para obtener datos de forma asíncrona.
+*   **Componentes Dinámicos**: Catálogo y Detalles con suscripciones reactivas y gestión de ciclo de vida.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Estructura del Proyecto
 
-```bash
-ng generate component component-name
-```
+*   `src/app/models`: Interfaces de TypeScript para la consistencia de datos.
+*   `src/app/services`: Lógica de comunicación con la API (HttpClient).
+*   `src/app/components/layout`: Componentes globales (Header, Footer).
+*   `src/app/components/pages`: Vistas principales (Home, Catalog, Detail, 404).
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
+Desarrollado por Antigravity.
