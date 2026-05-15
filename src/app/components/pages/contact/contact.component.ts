@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
@@ -9,10 +10,11 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css'
 })
-export class ContactComponent {
+export class ContactComponent implements OnInit {
+  private route = inject(ActivatedRoute);
+
   /**
    * Componente de contacto.
-   * Maneja el formulario y muestra la información de contacto inventada.
    */
   contactInfo = {
     email: 'hello@sociallocal.com',
@@ -24,6 +26,17 @@ export class ContactComponent {
       { name: 'LinkedIn', url: '#' }
     ]
   };
+
+  message: string = '';
+
+  ngOnInit() {
+    // Leemos si venimos de una reserva específica
+    this.route.queryParams.subscribe(params => {
+      if (params['evento']) {
+        this.message = `Hola, me gustaría reservar el evento: ${params['evento']}.`;
+      }
+    });
+  }
 
   onSubmit() {
     alert('Gracias por contactar con SocialLocal. Nos pondremos en contacto contigo pronto.');

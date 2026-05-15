@@ -57,11 +57,21 @@
 }
 
 h1 {
-  font-size: clamp(4rem, 12vw, 10rem);
+  font-size: clamp(2.5rem, 12vw, 9rem);
 }
 
 .tracking-widest {
-  letter-spacing: 5px;
+  letter-spacing: 3px;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding-top: 30px;
+    min-height: calc(100vh - 80px);
+  }
+  .tracking-tighter {
+    letter-spacing: -2px;
+  }
 }
 
 /* Animaciones escalonadas internas */
