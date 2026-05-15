@@ -7,27 +7,15 @@ import { ContactComponent } from './components/pages/contact/contact.component';
 import { CreateEventComponent } from './components/pages/create-event/create-event.component';
 import { NotFoundComponent } from './components/pages/not-found/not-found.component';
 
-/**
- * Configuración de rutas de la aplicación.
- * Implementa rutas genéricas, parametrizadas y redirecciones.
- */
+// Definición de las páginas y sus rutas
 export const routes: Routes = [
-  // Ruta por defecto (Default route)
-  { path: '', component: HomeComponent },
-  
-  // Rutas para componentes genéricos
-  { path: 'servicios', component: CatalogComponent },
-  { path: 'servicios/nuevo', component: CreateEventComponent },
-  { path: 'nosotros', component: AboutComponent },
-  { path: 'contacto', component: ContactComponent },
-  
-  // Ruta con parámetros (ej. componentes/:parametro)
-  { path: 'servicios/:id', component: DetailComponent },
-  
-  // Ruta de redirección (Redirect route)
+  { path: '', component: HomeComponent }, // Página de inicio
+  { path: 'servicios', component: CatalogComponent }, // Listado de eventos
+  { path: 'servicios/nuevo', component: CreateEventComponent }, // Formulario de creación
+  { path: 'nosotros', component: AboutComponent }, // Información sobre la agencia
+  { path: 'contacto', component: ContactComponent }, // Formulario de contacto
+  { path: 'servicios/:id', component: DetailComponent }, // Detalle de un evento específico
   { path: 'home', redirectTo: '', pathMatch: 'full' },
-  
-  // Ruta 404 para rutas no encontradas
   { path: '404', component: NotFoundComponent },
-  { path: '**', redirectTo: '404' }
+  { path: '**', redirectTo: '404' } // Si la ruta no existe, vamos a 404
 ];

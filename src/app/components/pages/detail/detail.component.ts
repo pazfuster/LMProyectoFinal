@@ -13,56 +13,25 @@ import { Subscription } from 'rxjs';
   styleUrl: './detail.component.css'
 })
 export class DetailComponent implements OnInit, OnDestroy {
-  /**
-   * Recibe el ID del servicio desde la ruta gracias a withComponentInputBinding().
-   */
-  @Input() id!: string;
-
-  /**
-   * Inyectamos los servicios necesarios.
-   */
+  @Input() id!: string; // Recibe el ID desde la URL automaticamente
   private partyService = inject(PartyService);
   private router = inject(Router);
-
-  /**
-   * Objeto para almacenar la información de los detalles.
-   */
-  service: Service | undefined;
-
-  /**
-   * Gestión de la suscripción.
-   */
+  service: Service | undefined; // Datos del evento seleccionado
   private subscription: Subscription | undefined;
 
-  /**
-   * Hook de ciclo de vida: Se ejecuta al inicializar el componente.
-   */
   ngOnInit(): void {
-    if (this.id) {
-      this.loadServiceDetail(Number(this.id));
-    }
+    if (this.id) this.loadServiceDetail(Number(this.id));
   }
 
-  /**
-   * Método para llamar a la API y obtener los detalles de un elemento específico.
-   * @param id Identificador del servicio.
-   */
+  // Carga la info del evento usando el ID
   loadServiceDetail(id: number): void {
     this.subscription = this.partyService.getOne(id).subscribe({
-      next: (data) => {
-        this.service = data;
-        console.log('Detalle del servicio cargado:', data);
-      },
-      error: (err) => {
-        console.error('Error al cargar el detalle del servicio:', err);
-      }
+      next: (data) => this.service = data,
+      error: (err) => console.error('Error:', err)
     });
   }
 
-  /**
-   * Maneja la reserva del evento redirigiendo al formulario de contacto
-   * con el contexto del servicio seleccionado.
-   */
+  // Al reservar, vamos al contacto y pasamos el nombre del evento
   onReserve() {
     if (this.service) {
       this.router.navigate(['/contacto'], { 
@@ -71,12 +40,8 @@ export class DetailComponent implements OnInit, OnDestroy {
     }
   }
 
-  /**
-   * Limpieza de suscripciones.
-   */
+  // Cerramos suscripción para no gastar memoria
   ngOnDestroy(): void {
-    if (this.subscription) {
-      this.subscription.unsubscribe();
-    }
+    this.subscription?.unsubscribe();
   }
 }

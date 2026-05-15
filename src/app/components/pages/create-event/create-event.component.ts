@@ -16,9 +16,7 @@ export class CreateEventComponent {
   private partyService = inject(PartyService);
   private router = inject(Router);
 
-  /**
-   * Objeto para almacenar los datos del nuevo evento.
-   */
+  // Objeto con los campos del formulario
   newEvent: Omit<Service, 'id'> = {
     name: '',
     description: '',
@@ -31,26 +29,20 @@ export class CreateEventComponent {
     includes: []
   };
 
-  /**
-   * Texto para manejar los elementos incluidos (separados por comas).
-   */
-  includesText: string = '';
+  includesText: string = ''; // Para manejar los "incluye" como texto
 
+  // Se ejecuta al dar clic en crear
   onSubmit() {
-    // Procesar los elementos incluidos
+    // Convertimos el texto separado por comas en una lista (Array)
     this.newEvent.includes = this.includesText.split(',').map(item => item.trim()).filter(item => item !== '');
 
-    // Llamar al servicio para crear el evento
+    // Enviamos el nuevo evento al servicio
     this.partyService.create(this.newEvent).subscribe({
-      next: (created) => {
-        console.log('Evento creado:', created);
-        alert('¡Evento creado con éxito! Volviendo al catálogo.');
-        this.router.navigate(['/servicios']);
+      next: () => {
+        alert('¡Evento creado!');
+        this.router.navigate(['/servicios']); // Volvemos al catálogo
       },
-      error: (err) => {
-        console.error('Error al crear evento:', err);
-        alert('Hubo un error al crear el evento.');
-      }
+      error: (err) => console.error('Error:', err)
     });
   }
 }

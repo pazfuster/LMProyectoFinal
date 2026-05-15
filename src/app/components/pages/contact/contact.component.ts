@@ -11,11 +11,9 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './contact.component.css'
 })
 export class ContactComponent implements OnInit {
-  private route = inject(ActivatedRoute);
+  private route = inject(ActivatedRoute); // Para leer datos de la URL
 
-  /**
-   * Componente de contacto.
-   */
+  // Información de contacto de la agencia
   contactInfo = {
     email: 'hello@sociallocal.com',
     phone: '+34 912 345 678',
@@ -27,10 +25,10 @@ export class ContactComponent implements OnInit {
     ]
   };
 
-  message: string = '';
+  message: string = ''; // Modelo para el mensaje del formulario
 
   ngOnInit() {
-    // Leemos si venimos de una reserva específica
+    // Si venimos de "Reservar", pre-rellenamos el mensaje con el nombre del evento
     this.route.queryParams.subscribe(params => {
       if (params['evento']) {
         this.message = `Hola, me gustaría reservar el evento: ${params['evento']}.`;
@@ -38,6 +36,7 @@ export class ContactComponent implements OnInit {
     });
   }
 
+  // Se ejecuta al enviar el formulario
   onSubmit() {
     alert('Gracias por contactar con SocialLocal. Nos pondremos en contacto contigo pronto.');
   }

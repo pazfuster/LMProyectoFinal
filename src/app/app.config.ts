@@ -4,10 +4,11 @@ import { provideHttpClient } from '@angular/common/http';
 
 import { routes } from './app.routes';
 
+// Configuración global de la aplicación Angular
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideBrowserGlobalErrorListeners(),
-    provideRouter(routes, withComponentInputBinding()),
-    provideHttpClient(),
+    provideBrowserGlobalErrorListeners(), // Manejo de errores globales
+    provideRouter(routes, withComponentInputBinding()), // Configura rutas y permite leer parámetros fácilmente
+    provideHttpClient(), // Habilita el servicio para hacer peticiones HTTP (API)
   ],
 };

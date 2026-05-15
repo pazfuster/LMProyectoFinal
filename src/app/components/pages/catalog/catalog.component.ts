@@ -13,49 +13,24 @@ import { Subscription } from 'rxjs';
   styleUrl: './catalog.component.css'
 })
 export class CatalogComponent implements OnInit {
-  /**
-   * Inyección del servicio de peticiones HTTP.
-   */
-  private partyService = inject(PartyService);
-  
-  /**
-   * Lista de servicios obtenida de la API.
-   */
-  services: Service[] = [];
-  
-  /**
-   * Gestión de la suscripción para evitar fugas de memoria.
-   */
+  private partyService = inject(PartyService); // Inyectamos el servicio de datos
+  services: Service[] = []; // Aquí guardaremos los eventos
   private subscription: Subscription | undefined;
 
-  /**
-   * Hook de ciclo de vida: Se ejecuta al inicializar el componente.
-   */
   ngOnInit(): void {
-    this.loadServices();
+    this.loadServices(); // Cargamos los datos al iniciar
   }
 
-  /**
-   * Método para llamar a la API y gestionar la respuesta.
-   */
+  // Llama al servicio para traer todos los eventos
   loadServices(): void {
     this.subscription = this.partyService.getAll().subscribe({
-      next: (data) => {
-        this.services = data;
-        console.log('Servicios cargados:', data);
-      },
-      error: (err) => {
-        console.error('Error al cargar servicios:', err);
-      }
+      next: (data) => this.services = data,
+      error: (err) => console.error('Error:', err)
     });
   }
 
-  /**
-   * Limpieza de suscripciones al destruir el componente.
-   */
+  // Cerramos la suscripción al salir para ahorrar memoria
   ngOnDestroy(): void {
-    if (this.subscription) {
-      this.subscription.unsubscribe();
-    }
+    this.subscription?.unsubscribe();
   }
 }

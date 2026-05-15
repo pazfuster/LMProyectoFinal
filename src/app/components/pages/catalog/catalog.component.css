@@ -4,11 +4,11 @@
 }
 
 .service-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-10px); /* Eleva la tarjeta al pasar el ratón */
 }
 
 .card-img-wrapper {
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 5; /* Formato vertical tipo revista */
   background-color: #f8f9fa;
 }
 
@@ -20,7 +20,7 @@
 }
 
 .service-card:hover .service-img {
-  transform: scale(1.05);
+  transform: scale(1.05); /* Zoom suave a la imagen */
 }
 
 .tracking-widest {

@@ -10,42 +10,34 @@ export class PartyService {
   private http: HttpClient = inject(HttpClient);
   private apiUrl: string = 'data/services.json';
   
-  /**
-   * Estado local de los servicios para permitir "creación" en memoria.
-   */
+  // Guardamos los eventos en memoria para que se actualicen al crear nuevos
   private servicesSubject = new BehaviorSubject<Service[]>([]);
   services$ = this.servicesSubject.asObservable();
 
   constructor() {
-    // Inicializamos la lista de servicios desde el JSON
     this.loadInitialData();
   }
 
+  // Carga los eventos del archivo JSON al iniciar
   private loadInitialData() {
     this.http.get<Service[]>(this.apiUrl).subscribe(data => {
       this.servicesSubject.next(data);
     });
   }
 
-  /**
-   * Obtiene todos los servicios disponibles (CRUD: GetAll).
-   */
+  // Devuelve todos los eventos (CRUD: Get All)
   getAll(): Observable<Service[]> {
     return this.services$;
   }
 
-  /**
-   * Obtiene un servicio específico por su ID (CRUD: GetOne).
-   */
+  // Busca un evento por su ID (CRUD: Get One)
   getOne(id: number): Observable<Service | undefined> {
     return this.services$.pipe(
       map((services: Service[]) => services.find((s: Service) => s.id === id))
     );
   }
 
-  /**
-   * Añade un nuevo servicio a la lista (Simulación CRUD: Create).
-   */
+  // Añade un nuevo evento a la lista local (CRUD: Create)
   create(newService: Omit<Service, 'id'>): Observable<Service> {
     return this.services$.pipe(
       take(1),
